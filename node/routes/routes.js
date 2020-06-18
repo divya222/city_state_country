@@ -1,0 +1,12 @@
+var app =require('express').Router();
+var sroutes = require('../student/student-routes');
+app.use('/student',sroutes);
+var croutes = require('../city/city-routes');
+app.use('/city',croutes);
+var stroutes = require('../state/state-routes');
+app.use('/state',stroutes);
+var cnroutes = require('../country/country-routes');
+app.use('/country',cnroutes);
+var cntroutes = require('../continent/continent-route');
+app.use('/continent',cntroutes);
+module.exports = app;

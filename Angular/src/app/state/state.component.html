@@ -1,0 +1,23 @@
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>sr.no</th>
+        <th>name</th>
+        <th>Country</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of states; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.cname}}</td>
+        <td><button (click)="edit(s)">edit</button></td>
+        <td><button (click)="delete(s)">delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button routerLink="/addstate">add state</button>
+  <button (click)="go_to_home()">home</button>

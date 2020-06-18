@@ -1,0 +1,23 @@
+<p>continent works!</p>
+<body>
+    <ul *ngFor = "let cnt of  continent">
+     <li><b>continent</b> : {{cnt.name}}  </li>
+    </ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Sr.no</th>
+        <th>continent/th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cnt of continent ; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{cnt.name}}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  </body>
+  <button (click)="go_to_home()">home</button>

@@ -1,0 +1,28 @@
+<p>country works!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>sr.no</th>
+      <th>name</th>
+      <th>action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of countries; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{c.name}}</td>
+      <td><button (click)="edit(c)">edit</button></td>
+      <td><button (click)="delete(c)">delete</button></td>
+    </tr>
+  </tbody>
+</table>
+  
+  <button routerLink="/add">add country</button>
+  
+  
+  <button (click)="go_to_home()">home</button>
+
+  
+  
+  

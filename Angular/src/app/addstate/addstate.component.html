@@ -1,0 +1,22 @@
+<p>addstate works!</p>
+<div>
+    <form [formGroup]="stateForm">
+       
+        <label>Name</label>
+        <input type="text" formControlName='name'>
+        <button (click)='addstate()'>Add state</button>
+
+    
+
+    <select formControlName="countryid" name="a">
+        <option *ngFor="let c of countries" value="{{c.key}}">{{c.name}}</option>
+    </select>
+
+    <button [disabled]="stateForm.invalid" (click)="addstate()">add</button>
+        <button (click)="reset()">Reset</button>
+
+    </form>
+
+    
+</div>
+

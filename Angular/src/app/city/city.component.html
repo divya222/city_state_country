@@ -1,0 +1,31 @@
+<p>city works!</p>
+{{myDate| date| uppercase}}
+
+<table>
+  <thead>
+    <tr>
+      <th>Search</th>
+      <input (keyup)="searchCity()" name="search" type="text" [(ngModel)]="search">
+    </tr>
+    <tr>
+      <th>sr.no</th>
+      <th>name</th>
+      <th>country</th>
+      <th>states</th>
+      <th>action</th>
+    </tr>
+    
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of displayCities | mysort:'name'; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{c.name}}</td>
+      <td>{{c.cname}}</td>
+      <td>{{c.sname}}</td>
+      <td><button (click)="edit(c)">edit</button>
+      <button (click)="delete(c)">delete</button></td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="go_to_home()">home</button>
+<button routerLink ='/addcity'>add city</button>

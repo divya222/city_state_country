@@ -1,0 +1,8 @@
+<form [formGroup]="countryForm">
+    <div>
+        <label> Name*</label>
+        <input formControlName="name" type="text">
+    </div>
+    <button [disabled]="countryForm.invalid" (click)="add()">Add</button>
+    <button (click)="reset()">Reset</button>
+</form>

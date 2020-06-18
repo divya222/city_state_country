@@ -1,0 +1,40 @@
+<p>addcity works!</p>
+<div>
+
+
+    <form [formGroup]="cityForm">
+        <div>
+            <label> Name*</label>
+            <input formControlName="name" type="text">
+            
+
+            <button (click)='add()'>Add City</button>
+            <select (change)="selectStatesForCountry()" formControlName="countryid" name="cc">
+                <option *ngFor="let v of countries"  value="{{v.key}}">{{v.name}}</option> 
+            </select>
+
+            <select formControlName="stateid" name="bb">
+                <option *ngFor="let s of displayStates"  value="{{s.key}}">{{s.name}}</option> 
+            </select>
+
+            
+            <hr>
+            <label>Email*</label>
+            <input formControlName="email" type="text">
+            <br>
+            <span *ngIf="(cityForm.controls.email.dirty || cityForm.controls.email.touched) && cityForm.controls.email.invalid">
+                Email is required nd in proper format
+            </span>
+            <br>
+            <label>Date*</label>
+            <input formControlName="myDate" type="date">
+            <br>
+            <span *ngIf="(cityForm.controls.myDate.dirty || cityForm.controls.myDate.touched) && cityForm.controls.myDate.invalid">
+                date is required nd in proper format
+            </span>
+            <br>
+        </div>
+        <button [disabled]="cityForm.invalid" (click)="add()">Add</button>
+        <button (click)="reset()">Reset</button>
+    </form>
+</div>
